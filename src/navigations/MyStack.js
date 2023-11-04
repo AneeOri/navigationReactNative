@@ -1,14 +1,15 @@
 /** El stack se pone dentro de un root navigator para que pueda acceder a nuestra stack */
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import { Colors } from "../constants/colors";
 import Home from "../screens/Home";
 import Settings from "../screens/Settings";
 //import CustomHeader from "./CustomHeader";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeStack = createStackNavigator();
 
-function CustomHeader ({title}) {
+function CustomHeader ({title , navigator}) {
     return(
      <View
      style={{
@@ -35,6 +36,8 @@ function CustomHeader ({title}) {
   
 
 export default function MyStack (){
+
+    const navigator = useNavigation();
     return (
         /**ScreenOoptions takes global updates and options is for customize every screen independently */
       <HomeStack.Navigator
