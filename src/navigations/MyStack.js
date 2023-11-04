@@ -4,12 +4,12 @@ import { View, Text, Button } from "react-native";
 import { Colors } from "../constants/colors";
 import Home from "../screens/Home";
 import Settings from "../screens/Settings";
-//import CustomHeader from "./CustomHeader";
+import CustomHeader from "./CustomHeader";
 import { useNavigation } from "@react-navigation/native";
 
 const HomeStack = createStackNavigator();
 
-function CustomHeader ({title , navigator}) {
+/*function CustomHeader ({title , navigator}) {
     return(
      <View
      style={{
@@ -32,7 +32,7 @@ function CustomHeader ({title , navigator}) {
         </Text>
      </View>
     );
-  }
+  }*/
   
 
 export default function MyStack (){
@@ -42,14 +42,15 @@ export default function MyStack (){
         /**ScreenOoptions takes global updates and options is for customize every screen independently */
       <HomeStack.Navigator
         initialRouteName="Home"
+        component={CustomHeader}
         screenOptions={{
             headerShown:true,
            // title: 'something',
            headerTitleAlign: "center",
            presentation:'transparentModal',
            gestureEnabled: true,
-           header:({ route}) => 
-             (<CustomHeader title={route.name}/>),
+           /*header:({ route}) => 
+             (<CustomHeader title={route.name}/>),*/
         }}
       >
         <HomeStack.Screen name="Home" component={Home}/>
