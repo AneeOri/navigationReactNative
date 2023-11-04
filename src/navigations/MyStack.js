@@ -7,9 +7,20 @@ const HomeStack = createStackNavigator();
 
 export default function MyStack (){
     return (
-      <HomeStack.Navigator>
+        /**ScreenOoptions takes global updates and options is for customize every screen independently */
+      <HomeStack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+            headerShown:true,
+            title: 'something',
+        }}
+      >
         <HomeStack.Screen name="Home" component={Home}/>
-        <HomeStack.Screen name="Settings" component={Settings}/>
+        <HomeStack.Screen 
+           name="Settings" 
+           component={Settings}
+           options={{title: 'settings'}}
+        />
       </HomeStack.Navigator>
     );
 }
