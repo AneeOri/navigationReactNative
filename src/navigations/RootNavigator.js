@@ -5,7 +5,7 @@ import MyButtonTab from "./ButtonTab";
 export default function RootNavigator () {
  return(
     <NavigationContainer>
-        <MyButtonTab/>
+       <MyStack/> 
     </NavigationContainer>
  );
 }
