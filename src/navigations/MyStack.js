@@ -2,10 +2,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { View, Text, Button } from "react-native";
 import { Colors } from "../constants/colors";
-import Home from "../screens/Home";
 import Settings from "../screens/Settings";
 import CustomHeader from "./CustomHeader";
 import { useNavigation } from "@react-navigation/native";
+import MyButtonTab from "./ButtonTab";
 
 const HomeStack = createStackNavigator();
 
@@ -53,7 +53,7 @@ export default function MyStack (){
              (<CustomHeader title={route.name}/>),*/
         }}
       >
-        <HomeStack.Screen name="Home" component={Home}/>
+        <HomeStack.Screen name="Root" component={MyButtonTab}/>
         <HomeStack.Screen 
            name="Settings" 
            component={Settings}
