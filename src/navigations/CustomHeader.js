@@ -1,5 +1,5 @@
-import { View } from "react-native";
-import { Colors , Text} from "../constants/colors";
+import { View , Text} from "react-native";
+import { Colors } from "../constants/colors";
 
 export default function CustomHeader ({title}) {
   return(
