@@ -1,11 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import MyStack from "./MyStack";
-import MyButtonTab from "./ButtonTab";
+import MyDrawer from "./Drawer";
 
 export default function RootNavigator () {
  return(
     <NavigationContainer>
-       <MyStack/> 
+      <MyDrawer/>
     </NavigationContainer>
  );
 }
