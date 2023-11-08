@@ -15,11 +15,11 @@ const authSlice = createSlice({
             state.userToken = action.payload;
             state.isLoading = false;
         },
-        singIn: (state, action) => {
+        signIn: (state, action) => {
             state.isSignout = false;
-            stete.userToken = action.payload
+            state.userToken = action.payload
         },
-        singOut: (state) => {
+        signOut: (state) => {
             state.isSignout = true;
             state.userToken = null;
         },
