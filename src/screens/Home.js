@@ -15,10 +15,7 @@ export default function Home ()
   
   return (
     <View style={globalStyles.screenContainer}>
-        <Text style={globalStyles.title}>Home</Text>
-        <Button 
-          onPress={() => navigation.navigate("Settings")}
-          title="Settings"/>
+        
     </View>
   )
 }
