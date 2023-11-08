@@ -4,10 +4,13 @@ import Profile from "../screens/Profile";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Colors } from "../constants/colors";
 import MyTopTab from "./TopTab";
+import { Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const MyTab = createBottomTabNavigator();
 
 export default function MyButtonTab() {
+  const navigation = useNavigation();
     return(
         <MyTab.Navigator
           initialRouteName="TopTab"
@@ -20,6 +23,16 @@ export default function MyButtonTab() {
               name="TopTab"
               component={MyTopTab}
               options={{
+                headerRight: () => (
+                  <Pressable onPress={() => navigation.navigate('Settings')}>
+                    <FontAwesome5
+                     name="cog"
+                     style={{marginRight :15}}
+                     size={28}
+                     color={Colors.secondary}
+                    />
+                  </Pressable>
+                ),
                 tabBarIcon: ({color}) => (<FontAwesome5 name="home" size={25} color={color} />),
               }}
             />
