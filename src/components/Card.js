@@ -16,8 +16,8 @@ export default function Card() {
     <View style={styles.card}>
       <View style={styles.row}>
         <Image source={require('../../assets/memojiAnee.png')} style={styles.img} />
+        <Text style={styles.name}>{userToken}</Text>
       </View>
-      <Text style={styles.name}>{userToken}</Text>
       <MyButton title={'Add Friend'} onPress={doSomething} />
     </View>
   );
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   name: {
-    fontSize: 14,
+    fontSize: 25,
     fontWeight: 'bold',
     marginLeft: 10,
     flexShrink: 1,
