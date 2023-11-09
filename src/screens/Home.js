@@ -8,6 +8,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { useNavigation } from '@react-navigation/native';
+import Card from '../components/Card';
 
 export default function Home () 
 {
@@ -15,7 +16,7 @@ export default function Home ()
   
   return (
     <View style={globalStyles.screenContainer}>
-        
+        <Card/>
     </View>
   )
 }
