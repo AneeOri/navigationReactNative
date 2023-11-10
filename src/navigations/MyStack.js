@@ -44,8 +44,8 @@ export default function MyStack (){
         initialRouteName="Home"
         component={CustomHeader}
         screenOptions={{
-            headerShown:true,
-           // title: 'something',
+          //  headerShown:false,
+          //  title: 'something',
            headerTitleAlign: "center",
            presentation:'transparentModal',
            gestureEnabled: true,
