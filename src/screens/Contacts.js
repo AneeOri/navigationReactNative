@@ -6,7 +6,7 @@ import AddContact from '../components/AddContact';
 export default function Contacts () 
 {
   return (
-    <View style={globalStyles.screenContainer}>
+    <View style={globalStyles.simpleContainer}>
       <AddContact/>
     </View>
   )
