@@ -17,6 +17,6 @@ export const globalStyles = StyleSheet.create({
      flex:1,
      backgroundColor:Colors.ligth,
      alignItems: 'center',
-     justifyContent:'center',
+     //justifyContent:'center',
    },
 });
