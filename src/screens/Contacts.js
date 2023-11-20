@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { globalStyles } from '../styles/global';
 import AddContact from '../components/AddContact';
+import ContactList from '../components/ContactList';
 
 export default function Contacts (){
   const [contacts, setContacts] = useState(initialContacts);
@@ -9,6 +10,7 @@ export default function Contacts (){
   return (
     <View style={globalStyles.simpleContainer}>
       <AddContact/>
+      <ContactList contacts={contacts}/>
     </View>
   )
 }
