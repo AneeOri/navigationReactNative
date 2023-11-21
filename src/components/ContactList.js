@@ -39,7 +39,34 @@ function Contact ({contact, onChange, onDelete}){
 
     return(
         <View>
-         <Text>{contactContainer}</Text>
+         <Text style={styles.contactContainer}>{contactContainer}</Text>
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    contactContainer: {
+      width: '100%',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: 10,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderColor: Colors.gray,
+    },
+    image: {
+      width: 50,
+      height: 50,
+      borderRadius: 25,
+      marginRight: 10,
+    },
+    row: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    name: {
+      fontSize: 17,
+      fontWeight: 'bold',
+      color: Colors.dark,
+    },
+  });
