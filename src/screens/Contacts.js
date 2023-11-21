@@ -20,7 +20,10 @@ export default function Contacts (){
   return (
     <View style={globalStyles.simpleContainer}>
       <AddContact/>
-      <ContactList contacts={contacts}/>
+      <ContactList contacts={contacts}
+       onChangeContact={handleChangeContact}
+       onDeleteContact={handleDeleteContact}
+      />
     </View>
   )
 }
