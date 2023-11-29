@@ -21,6 +21,7 @@ return(
 function Contact ({contact, onChange, onDelete}){
     const [isEditing, setIsEditing] = useState(false);
     let contactContainer;
+    const memoPhoto = React.useMemo(() => getRandomPhoto(), []);
     if(isEditing){
         contactContainer=(
             <View>
@@ -41,7 +42,7 @@ function Contact ({contact, onChange, onDelete}){
     return(
         <View style={styles.contactContainer}>
           <View style={styles.row}>
-            <Image source={getRandomPhoto()} style={styles.image}/>
+            <Image source={memoPhoto} style={styles.image}/>
             {contactContainer}
           </View>
         </View>
