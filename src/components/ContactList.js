@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, ScrollView,View, Text, StyleSheet, Image,Pressable } from "react-native";
 import MyInput from "./MyInput";
+import { getRandomPhoto } from "../utils/randomPhoto";
 
 export default function ContactList({contacts, onChangeContact, onDeleteContact}){
 return(
@@ -38,8 +39,11 @@ function Contact ({contact, onChange, onDelete}){
     }
 
     return(
-        <View>
-         <Text style={styles.contactContainer}>{contactContainer}</Text>
+        <View style={styles.contactContainer}>
+          <View style={styles.row}>
+            <Image source={getRandomPhoto()} style={styles.image}/>
+            {contactContainer}
+          </View>
         </View>
     );
 }
