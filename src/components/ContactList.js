@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button, ScrollView,View, Text, StyleSheet, Image,Pressable } from "react-native";
 import MyInput from "./MyInput";
 import { getRandomPhoto } from "../utils/randomPhoto";
+import { FontAwesome } from "@expo/vector-icons";
+import { Colors } from "../constants/colors";
 
 export default function ContactList({contacts, onChangeContact, onDeleteContact}){
 return(
@@ -34,7 +36,7 @@ function Contact ({contact, onChange, onDelete}){
     }else{
         contactContainer=(
             <View>
-                <Text>{contact.name}</Text>
+                <Text style={styles.name}>{contact.name}</Text>
             </View>
         );
     }
@@ -44,6 +46,30 @@ function Contact ({contact, onChange, onDelete}){
           <View style={styles.row}>
             <Image source={memoPhoto} style={styles.image}/>
             {contactContainer}
+          </View>
+          <View style={styles.row}>
+            {
+                isEditing ?(
+                    <Button title='Save' onPress={() => setIsEditing(false)}/>
+                ) : (
+                    <Pressable onPress={() => setIsEditing(true)}>
+                        <FontAwesome
+                          name="edit"
+                          size={24}
+                          color={Colors.secondary}
+                          style={{marginRight:15 , marginTop: 5}}
+                        />
+                    </Pressable>
+                )
+            }
+            <Pressable onPress={() => onDelete(contact.id)}>
+                <FontAwesome
+                 name="trash"
+                 size={24}
+                 color={Colors.secondary}
+                 style={{marginRight:15 , marginTop: 5}}
+                />
+            </Pressable>
           </View>
         </View>
     );
